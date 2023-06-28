@@ -34,12 +34,51 @@
             font-family: Arial, Helvetica, sans-serif;
             float: left;
         }
+        li {
+            list-style: none;
+        }
+        .outer-menu-item {
+            float: left;
+            position: relative;
+        }
+        .outer-menu-item:hover {
+            background-color: black;
+            color: white;
+        }
+        .menu-title {
+            display: block;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            padding: 5px 20px;
+        }
+        .inner-menu {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 2px 6px rgba(5, 5, 5, 0.9);
+            z-index: 1000;
+            text-align: center;
+        }
+        .inner-menu-item > a {
+            display: block;
+            padding: 5px 10px;
+            color: black;
+        }
+        .inner-menu-item > a:hover {
+            background-color: black;
+            color: white;
+        }
         .date {
+            padding-top: 10px;
             float: right;
         }
         .box {
             width: 1000px;
-            height: 25px;
+            height: 35px;
             border-top: 1px solid black;
             background-color: rgb(251, 255, 195);
             padding-top: 20px;
@@ -127,6 +166,16 @@
             background-color: rgb(248, 248, 123);
         }
     </style>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".outer-menu-item").hover(function () {
+                $(this).find(".inner-menu").show();
+            }, function () {
+                $(this).find(".inner-menu").hide();
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="container">
@@ -137,14 +186,44 @@
         <h1>[ 호주 ]</h1>
         <br>
         <div class="box">
-            <div class="contents">
-                <p>현지인 추천 맛집  ||  기념품 추천  ||  관광명소</p>
-            </div>
+            <nav id="main-navigation">
+                <div class="contents">
+                    <ul class="outer-menu">
+                        <li class="outer-menu-item">
+                            <span class="menu-title"><h2>다른나라로</h2></span>
+                            <ul class="inner-menu">
+                                <li class="inner-menu-item"><a href="1.html">영국</a></li>
+                                <li class="inner-menu-item"><a href="2.html">일본</a></li>
+                                <li class="inner-menu-item"><a href="3.html">핀란드</a></li>
+                            </ul>
+                        </li>
+                        <li class="outer-menu-item">
+                            <span class="menu-title"><h2>현지인 추천 맛집</h2></span>
+                            <ul class="inner-menu">
+                                <li class="inner-menu-item"><a href="#first">추천맛집</a></li>
+                            </ul>
+                        </li>
+                        <li class="outer-menu-item">
+                            <span class="menu-title"><h2>기념품 추천</h2></span>
+                            <ul class="inner-menu">
+                                <li class="inner-menu-item"><a href="#second">기념품</a></li>
+                            </ul>
+                        </li>
+                        <li class="outer-menu-item">
+                            <span class="menu-title"><h2>관광명소</h2></span>
+                            <ul class="inner-menu">
+                                <li class="inner-menu-item"><a href="#third">관광소</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
             <div class="date">
                 <p>2023.04.24</p>
             </div>
         </div>
         <div class="container_header">
+            <a id="first"></a>
             <div class="left">
                 <div class="img"></div>
                 <div class="img1"></div>
@@ -154,6 +233,7 @@
                 </div>
             </div>
             <div class="right">
+                <a id="second"></a>
                 <table>
                     <tr>
                         <td>
@@ -214,6 +294,7 @@
                     <td><img src="../WepImage/호주맛집/호주/울루루.jpg"></td>
                 </tr>
             </table>
+            <a id="third"></a>
         </div>
         <div class="container_footer">
             <div class="footer">

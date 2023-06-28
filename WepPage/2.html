@@ -59,6 +59,34 @@
             background-color: rgb(187, 252, 230);
         }
     </style>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+         $(document).ready(function () {
+            $("p").animate({
+                opacity: 0.5,
+            });
+
+            $("img").animate({
+                opacity: 0.5,
+            }, 1000).animate({
+                opacity: 1,
+                fontSize: "1.5em",
+                fontWeight: "bold"
+            }, 1000);
+
+            $("th").animate({
+                opacity: 0.5,
+            }, 1000).animate({
+                opacity: 0,
+            }, 1000);
+
+            $("h2").animate({
+                opacity: 0.5,
+            }, 1000).animate({
+                opacity: 0,
+            }, 1000);
+        });
+    </script>
 </head>
 <body>
     <div class="main">
@@ -207,7 +235,7 @@
         </div>
         <div class="main">
             <div class="footer">
-                <a href="#home">맨 위로</a> || <a href="../FirstPage.html">메인 홈페이지로</a>
+                <a href="#home">맨 위로</a> || <a href="../FirstPage.html">메인 홈페이지로</a> || <a href="images.html">사진 모아보기</a>
             </div>
         </div>
     </div>
